@@ -59,8 +59,8 @@ function renderIndividualTask(app, task) {
   titleElm.textContent = task.title;
   titleElm.setAttribute('id', 'task-title');
   updateElm.className = 'update';
-  editImg.src = '/assets/edit.svg';
-  deleteImg.src = '/assets/delete.svg';
+  editImg.src = 'assets/edit.svg';
+  deleteImg.src = 'assets/delete.svg';
   descriptionElm.textContent = task.description;
   taskFilterElm.className = 'taskFilter';
   var dueDate = typeof task.dueDate === 'string' ? (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(task.dueDate) : task.dueDate;
@@ -167,7 +167,8 @@ function renderFilteredTasks(app, section) {
   if (searchValue) {
     filteredTasks = (0,_components_utils__WEBPACK_IMPORTED_MODULE_1__.filterTasksByLabel)(app, searchValue);
   }
-  select('.contentHead .filter .view p').textContent = "".concat(filteredTasks.length, " Tasks");
+  var textTask = filteredTasks.length < 1 ? 'Task' : 'Tasks';
+  select('.contentHead .filter .view p').textContent = "".concat(filteredTasks.length, " ").concat(textTask);
   (0,_components_utils__WEBPACK_IMPORTED_MODULE_1__.clearTaskContainer)();
   (0,_components_utils__WEBPACK_IMPORTED_MODULE_1__.updateTaskCount)(app);
   filteredTasks.forEach(function (task) {
@@ -199,11 +200,11 @@ function renderProjects(app) {
     projectTaskCount.textContent = taskInProject.length;
     var editProjectBtn = newElm('button');
     var editImg = newElm('img');
-    editImg.src = '/assets/edit.svg';
+    editImg.src = 'assets/edit.svg';
     editProjectBtn.appendChild(editImg);
     var deleteProjectBtn = newElm('button');
     var deleteImg = newElm('img');
-    deleteImg.src = '/assets/delete.svg';
+    deleteImg.src = 'assets/delete.svg';
     deleteProjectBtn.appendChild(deleteImg);
     projectDiv.appendChild(projectColor);
     projectDiv.appendChild(projectTitle);
@@ -5848,4 +5849,4 @@ searchBar.addEventListener('input', function () {
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle.9b9098d37ef3e48c2e0c.js.map
+//# sourceMappingURL=bundle.4af06476cb3153af162c.js.map

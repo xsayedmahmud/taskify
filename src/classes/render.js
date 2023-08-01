@@ -42,8 +42,8 @@ function renderIndividualTask(app, task) {
   titleElm.textContent = task.title;
   titleElm.setAttribute('id', 'task-title');
   updateElm.className = 'update';
-  editImg.src = '/assets/edit.svg';
-  deleteImg.src = '/assets/delete.svg';
+  editImg.src = 'assets/edit.svg';
+  deleteImg.src = 'assets/delete.svg';
   descriptionElm.textContent = task.description;
   taskFilterElm.className = 'taskFilter';
 
@@ -216,12 +216,12 @@ function renderProjects(app) {
 
     const editProjectBtn = newElm('button');
     const editImg = newElm('img');
-    editImg.src = '/assets/edit.svg';
+    editImg.src = 'assets/edit.svg';
     editProjectBtn.appendChild(editImg);
 
     const deleteProjectBtn = newElm('button');
     const deleteImg = newElm('img');
-    deleteImg.src = '/assets/delete.svg';
+    deleteImg.src = 'assets/delete.svg';
     deleteProjectBtn.appendChild(deleteImg);
 
     projectDiv.appendChild(projectColor);
